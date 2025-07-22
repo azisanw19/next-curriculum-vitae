@@ -38,7 +38,7 @@ export default function ProfileCard() {
           application design architecture, clean architecture, and SOLID principles. Hard worker and
           able to work in a team or individually. Looking for job opportunities in the mobile
           developer field that provide the opportunity to develop into a professional career.{' '}
-          <Link href="/portfolio" className="underline font-medium">
+          <Link href="/" className="underline font-medium">
             Click here to view my portfolio.
           </Link>
         </p>
