@@ -230,7 +230,7 @@ export default function Project() {
         <div className="italic text-gray-800 mb-1">Kotlin Android</div>
         <ul className="list-disc ml-5 text-sm text-gray-900 space-y-1">
           <li>Class Reminder is the perfect companion for school, college or university. With class reminders, you can manage weekly schedules, assignments, and take notes.</li>
-          <li>It's a simple, practical and modern interface, planning your time has never been easier!</li>
+          <li>It&rsquo;s a simple, practical and modern interface, planning your time has never been easier!</li>
           <li>Class Reminder shows notifications 1 hour before your class and 1 day before your homework or assignment</li>
           <li>Always keep in mind upcoming schedules with schedule widget</li>
           <li>Can take simple notes with a simple interface</li>

@@ -19,7 +19,7 @@ export default function Education() {
           <li>Graduated with cum laude predicate</li>
           <li>Main focus on programming, artificial intelligence, and software development</li>
           <li>
-            Completed a thesis entitled "Classification of Water Quality Using Fuzzy LNF-FE and ANN."
+            Completed a thesis entitled &quot;Classification of Water Quality Using Fuzzy LNF-FE and ANN.&quot;
           </li>
         </ul>
       </div>

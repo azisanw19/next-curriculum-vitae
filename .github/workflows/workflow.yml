@@ -1,0 +1,24 @@
+name: Deploy Next.js to VPS
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH and start app
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+            set -e
+            cd /home/fintech/development/next-curriculum-vitae-aziz-anwar/next-curriculum-vitae
+            git pull
+            sudo docker-compose build --pull
+            sudo docker-compose up -d --build
