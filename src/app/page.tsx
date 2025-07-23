@@ -2,6 +2,7 @@ import ProfileCard from "@/app/components/ProfileCard";
 import WorkExperience from "@/app/components/WorkExperience";
 import Education from "@/app/components/Education";
 import Project from "@/app/components/Project";
+import Certification from "@/app/components/Certification";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <WorkExperience />
         <Education />
         <Project />
+        <Certification />
       </div>
     </main>
   )
