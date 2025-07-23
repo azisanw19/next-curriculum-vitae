@@ -1,5 +1,5 @@
 # Choose the Image which has Node installed already
-FROM node:lts-alpine as node-build
+FROM node:lts-bullseye as node-build
 
 # make the 'app' folder the current working directory
 WORKDIR /app
