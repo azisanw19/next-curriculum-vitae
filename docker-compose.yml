@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     networks:
       private-network:
-        ipv4_address: 172.18.0.7
+        ipv4_address: 172.18.0.8
     # default port 80
 
 networks:
