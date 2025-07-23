@@ -10,6 +10,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Copy files to VPS
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          source: ".next,public,package.json,package-lock.json,DockerFile,docker-compose.yml"
+          target: "/home/fintech/development/next-curriculum-vitae-aziz-anwar"
+
       - name: SSH and start app
         uses: appleboy/ssh-action@v1.2.0
         with:
@@ -18,7 +41,6 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             set -e
-            cd /home/fintech/development/next-curriculum-vitae-aziz-anwar/next-curriculum-vitae
-            git pull
+            cd /home/fintech/development/next-curriculum-vitae-aziz-anwar
             sudo docker-compose build --pull
             sudo docker-compose up -d --build
