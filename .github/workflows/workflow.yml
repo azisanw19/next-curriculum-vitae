@@ -15,7 +15,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
+          password: ${{ secrets.KEY }}
           script: |
             set -e
             cd /home/fintech/development/next-curriculum-vitae-aziz-anwar/next-curriculum-vitae
