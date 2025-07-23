@@ -1,9 +1,30 @@
-server {
+erver {
 
     server_name azisanw.cloud;
 
     location / {
-        proxy_pass http://172.18.0.2:3000;
+        proxy_pass http://172.18.0.8:3000;
     }
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/azisanw.cloud/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/azisanw.cloud/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    if ($host = azisanw.cloud) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name azisanw.cloud;
+    listen 80;
+    return 404; # managed by Certbot
 
 }
