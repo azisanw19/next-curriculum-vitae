@@ -1,0 +1,8 @@
+server {
+    server_name www.azisanw.cloud;
+
+    location / {
+        proxy_pass http://172.18.0.2:3000;
+    }
+
+}
